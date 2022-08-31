@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Away</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="./">Back</a></li>
-                <li><a href="/admin">Admin</a></li>
-            </ul>
-        </nav>
-    </header>
+{% extends 'base.html' %}
+
+{% block title %}
+Blog Away - Create New
+{% endblock title %}
+
+{% block nav %}
+    <nav>
+        <ul>
+
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="./">Back</a></li>
+        </ul>
+    </nav>
+{% endblock nav %}
+
+{% block content %}
+
     <main>
         <form method="POST">
             {% csrf_token %}
@@ -25,5 +26,5 @@
         </form>
     </main>
     <footer></footer>
-</body>
-</html>
+
+{% endblock content %}

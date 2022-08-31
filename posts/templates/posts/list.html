@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Away</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/admin">Admin</a></li>
-                <!-- <li><a href="/create">Create</a></li>
-                <li><a href="/update">Update</a></li> -->
-                <li><a href="create">New Post</a></li>
-            </ul>
-        </nav>
-    </header>
+{% extends 'base.html' %}
+
+{% block nav %}
+    <nav>
+        <ul>
+
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="create">New Post</a></li>
+        </ul>
+    </nav>
+{% endblock nav %}
+
+{% block content %}
+
     <main>
-        <h1>Blog Away</h1>
         <form method="GET">
             <!-- {% csrf_token %} not needed for GET, i guess -->
             <input type="text" name="q">
@@ -55,5 +49,5 @@
 
     </main>
     <footer></footer>
-</body>
-</html>
+
+{% endblock content %}
